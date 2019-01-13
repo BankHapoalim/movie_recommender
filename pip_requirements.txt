@@ -1,0 +1,6 @@
+Django==2.0.4
+DjangoRestless==0.0.10
+numpy==1.14.2
+pandas==0.22.0
+requests==2.18.4
+surprise==0.1
