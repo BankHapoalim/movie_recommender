@@ -13,6 +13,10 @@ def test():
     predicted2 = requests.get(ENDPOINT + '/predictInterests', {"userId": USER_ID}).json()
 
     assert not (set(predicted) & set(predicted2))
+
+    matrix = requests.get(ENDPOINT + '/findMovie', {"q": 'matrix'}).json()
+    print(matrix)
+
     print("Test OK")
 
 if __name__ == '__main__':

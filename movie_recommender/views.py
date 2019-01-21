@@ -42,3 +42,12 @@ class PredictInterests(Endpoint):
 
         return list(islice((m for m in predicted if m not in movies_liked), ITEM_LIMIT))
 
+
+
+class FindMovie(Endpoint):
+    "Find itemId by name"
+
+    def get(self, request):
+        q = request.GET['q']
+        return [{'title': m.title, 'id': m.id} for m in Movie.objects.filter(title__icontains=q)]
+
